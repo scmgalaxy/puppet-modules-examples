@@ -1,0 +1,11 @@
+Accessing Hiera Data Using CLI
+
+To access the value , just use the hiera command with the key as shown below.
+$ hiera ldaps_ervers
+
+If you have used interpolation in the “:datadir” configuration, You should add the parameters as shown below.
+$ hiera ldap_servers ::environment=production
+
+Accessing Hiera Data From Modules
+$ ldapservers = hiera("ldap_servers")
+$ ldapservers = hiera_array("ldap_servers")
